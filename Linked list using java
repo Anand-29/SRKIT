@@ -38,14 +38,41 @@ public class Main
         head=newnode;
         newnode.next=temp;
     }
+    public void deletef(){
+        Node temp=head;
+        head=temp.next;
+    } 
 	public static void main(String[] args) {
 	Main ob=new Main();
-	ob.insert(10);
-	ob.insert(20);
-	ob.insert(30);
-	ob.insert(40);
-	ob.display();
-	ob.insertb(50);
-	ob.display();
+	Scanner sc=new Scanner(System.in);
+	int a;
+	while(true){
+	    System.out.println("press 1 to insert at end");
+	    System.out.println("press 2 to insert at begining");
+	    System.out.println("press 3 to insert at display");
+	    System.out.println("press 4 to insert at exit");
+	    System.out.println("press 5 to delete the first value");
+	    a=sc.nextInt();
+	    switch(a){
+	        case 1: System.out.println("enter the value to be inserted");
+	        a=sc.nextInt();
+	        ob.insert(a);
+	        break;
+	        case 2:
+	        System.out.println("enter the value to be inserted");
+	        a=sc.nextInt();
+	        ob.insertb(a);
+	        break;
+	        case 3:
+	        System.out.println("elements in linked list are:-");
+	        ob.display();
+	        System.out.println();
+	        break;
+	        case 4:
+	        return;
+	        case 5:
+	            ob.deletef();
+	    }
+	}    
 	}
 }
