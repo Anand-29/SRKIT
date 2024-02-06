@@ -41,7 +41,17 @@ public class Main
     public void deletef(){
         Node temp=head;
         head=temp.next;
-    } 
+    }
+    public void deletel(){
+        Node temp1=head;
+        Node temp2=temp1.next;
+        while(temp2.next!=null){
+            temp1=temp1.next;
+            temp2=temp2.next;
+            
+        }
+        temp1.next=null;
+    }
 	public static void main(String[] args) {
 	Main ob=new Main();
 	Scanner sc=new Scanner(System.in);
@@ -52,6 +62,7 @@ public class Main
 	    System.out.println("press 3 to insert at display");
 	    System.out.println("press 4 to insert at exit");
 	    System.out.println("press 5 to delete the first value");
+	    System.out.print("press 6 to delete the last data");
 	    a=sc.nextInt();
 	    switch(a){
 	        case 1: System.out.println("enter the value to be inserted");
@@ -72,7 +83,27 @@ public class Main
 	        return;
 	        case 5:
 	            ob.deletef();
+	        case 6:
+	            ob.deletel();
 	    }
 	}    
 	}
 }
+   
+   
+   
+   
+   
+   //github.com/Anand-29/SRKIT
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
