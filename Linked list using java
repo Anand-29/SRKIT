@@ -1,0 +1,51 @@
+import java.util.*;
+public class Main
+{
+    
+    class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    Node head=null;
+    public void insert(int d){
+        Node newnode=new Node(d);
+        if(head==null){
+            head=newnode;
+        }
+        else{
+            Node temp=head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=newnode;
+        }
+    }
+    public void display(){
+        Node temp=head;
+        System.out.println();
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+    public void insertb(int d){
+        Node temp=head;
+        Node newnode=new Node(d);
+        head=newnode;
+        newnode.next=temp;
+    }
+	public static void main(String[] args) {
+	Main ob=new Main();
+	ob.insert(10);
+	ob.insert(20);
+	ob.insert(30);
+	ob.insert(40);
+	ob.display();
+	ob.insertb(50);
+	ob.display();
+	}
+}
