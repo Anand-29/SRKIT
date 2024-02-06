@@ -1,0 +1,35 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner ob=new Scanner(System.in);
+	    System.out.println("enter the array size");
+	    int n=ob.nextInt();
+	    int a[]=new int[n];
+	    System.out.println("enter the array values");
+	    for(int i=0;i<n;i++)
+	    a[i]=ob.nextInt();
+	    System.out.print("enter the sum");
+	    int sum=ob.nextInt();
+	    Arrays.sort(a);
+	    int count=0;
+	    int i=0;
+	    int j=a.length-1;
+	    while(i<j){
+	        if(a[i]+a[j]<sum){
+	            j--;
+	        }
+	        else if(a[i]+a[j]>sum){
+	            i++;
+	        }
+	        else{
+	            count++;
+	            i++;
+	            j--;
+	        }
+	    }
+	System.out.print(count);
+	
+	}
+}
