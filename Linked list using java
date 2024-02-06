@@ -52,6 +52,30 @@ public class Main
         }
         temp1.next=null;
     }
+    public void deletepos(int pos){
+        Node temp1=head;
+        Node temp2=temp1.next;
+        while(pos>2){
+            temp1=temp1.next;
+            temp2=temp2.next;
+            pos--;
+        }
+        temp1=temp2.next;
+        
+    }
+    public void insertpos(int pos,int d){
+        Node temp1=head;
+        Node temp2=temp1.next;
+        while(pos>2){
+            temp1=temp1.next;
+            temp2=temp2.next;
+            pos--;
+        }
+        Node newnode=new Node(d);
+        temp1.next=newnode;
+        newnode.next=temp2;
+        
+    }
 	public static void main(String[] args) {
 	Main ob=new Main();
 	Scanner sc=new Scanner(System.in);
@@ -62,7 +86,9 @@ public class Main
 	    System.out.println("press 3 to insert at display");
 	    System.out.println("press 4 to insert at exit");
 	    System.out.println("press 5 to delete the first value");
-	    System.out.print("press 6 to delete the last data");
+	    System.out.println("press 6 to delete the last data");
+	    System.out.println("press 7 to delete at position");
+	    System.out.println("press 8 to insert at position");
 	    a=sc.nextInt();
 	    switch(a){
 	        case 1: System.out.println("enter the value to be inserted");
@@ -83,8 +109,21 @@ public class Main
 	        return;
 	        case 5:
 	            ob.deletef();
+	            break;
 	        case 6:
 	            ob.deletel();
+	            break;
+	       case 7:
+	           System.out.println("enter the position");
+	           a=sc.nextInt();
+	           ob.deletepos(a);
+	           break;
+	       case 8:
+	           System.out.println("enter the position");
+	           a=sc.nextInt();
+	           System.out.println("enter the data to be inserted");
+	           int b=sc.nextInt();
+	           ob.insertpos(a,b);
 	    }
 	}    
 	}
