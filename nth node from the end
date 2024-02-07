@@ -34,8 +34,11 @@ public class Main{
     }
     public void solution(int n){
         Node temp=head;
-        while(n>1){
+        while(temp.next!=null){
             temp=temp.next;
+        }
+        while(n>1){
+            temp=temp.prev;
             n--;
         }
         System.out.print(temp.data);
@@ -53,3 +56,7 @@ public class Main{
      ob.solution(n);
     }
 }
+
+
+
+  // 
