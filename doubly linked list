@@ -27,11 +27,19 @@ public class Main
             
         }
     }
+    public void display(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
 	public static void main(String[] args) {
      Main ob=new Main();
      ob.insert(10);
      ob.insert(20);
      ob.insert(30);
+     ob.display();
 	}
 }
   
