@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    public void insert(Node head,int d){
+        Node newnode=new Node(d);
+        if(head==null){
+            head=newnode;
+        }
+        else{
+            Node temp=head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=newnode;
+        }
+    }
+    public static void main(String arr[]){
+        Main ob=new Main();
+        Node head1=null;
+        Node head2=null;
+        ob.insert(head1,1);
+        ob.insert(head2,1);
+    }
+}
+
+
+//list 1 = 1 4 6 7 8
+//list 2 = 2 3 10 12
+//list 3= 1 2 3 4 6 7 8 10 12
