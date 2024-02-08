@@ -8,10 +8,11 @@ public class Main{
             this.next=null;
         }
     }
-    public void insert(Node head,int d){
+    public Node insert(Node head,int d){
         Node newnode=new Node(d);
         if(head==null){
             head=newnode;
+            return head;
         }
         else{
             Node temp=head;
@@ -19,14 +20,24 @@ public class Main{
                 temp=temp.next;
             }
             temp.next=newnode;
+            return head;
+        }
+    }
+    public void display(Node head){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data);
+            temp=temp.next;
         }
     }
     public static void main(String arr[]){
         Main ob=new Main();
         Node head1=null;
         Node head2=null;
-        ob.insert(head1,1);
-        ob.insert(head2,1);
+        Node head3=null;
+        head1=ob.insert(head1,1);
+        ob.insert(head1,4);
+        ob.display(head1);
     }
 }
 
